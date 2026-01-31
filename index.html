@@ -14,19 +14,23 @@
             color: #333;
             background-color: #66dddb;
         }
+
         header {
             text-align: center;
             margin-bottom: 50px;
             padding-bottom: 20px;
             border-bottom: 2px solid #eee;
         }
+
         h1 {
             color: #2c3e50;
         }
+
         .tagline {
             color: #7f8c8d;
             font-style: italic;
         }
+
         .card {
             background: white;
             padding: 25px;
@@ -34,18 +38,95 @@
             border-radius: 30px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.08);
         }
+
         a {
             color: #3498db;
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
         }
+
         footer {
             text-align: center;
             margin-top: 50px;
             color: #95a5a6;
             font-size: 0.9em;
+        }
+
+            /* ===== 技能卡片区域样式 ===== */
+        .skills-section {
+            margin: 50px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            border-radius: 20px;
+            }
+
+        .skills-section h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .skills-section > p {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        /* Flexbox 布局容器 - 关键代码 */
+        .skills-container {
+            display: flex; /* 开启Flex布局 */
+            flex-wrap: wrap; /* 如果一行放不下就换行 */
+            justify-content: center;
+            gap: 30px; /* 卡片之间的间距 */
+        }
+
+        /* 单个技能卡片样式 */
+        .skill-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            width: 300px; /* 固定卡片宽度 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #eaeaea;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .skill-icon {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .skill-card h3 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .skill-card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .skill-card li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+            color: #555;
+        }
+
+        .skill-card li:last-child {
+            border-bottom: none;
         }
     </style>
 </head>
@@ -73,6 +154,54 @@
                 <li>💡 探索更多Web技术</li>
             </ul>
         </div>
+
+        <section class="skills-section">
+            <h2>🛠️ 我的技能树</h2>
+            <p>正在点亮以下技能点...</p>
+    
+            <div class="skills-container">
+                <!-- 技能卡片 1 -->
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>前端入门</h3>
+                    <ul>
+                        <li>HTML & CSS</li>
+                        <li>浏览器开发者工具</li>
+                        <li>响应式设计基础</li>
+                    </ul>
+                </div>
+        
+                <!-- 技能卡片 2 -->
+                <div class="skill-card">
+                    <div class="skill-icon">🔧</div>
+                    <h3>Git实战</h3>
+                    <ul>
+                        <li>提交与推送</li>
+                        <li>分支管理</li>
+                        <li>GitHub Pages部署</li>
+                    </ul>
+                </div>
+        
+                <!-- 技能卡片 3 -->
+                <div class="skill-card">
+                    <div class="skill-icon">🚀</div>
+                    <h3>持续学习</h3>
+                    <ul>
+                        <li>解决问题能力</li>
+                        <li>探索新工具</li>
+                        <li>阅读技术文档</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">💻</div>
+                    <h3>准备进行</h3>
+                    <ul>
+                        <li>Markdown语言学习</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
         <div class="card">
             <h2>🔗 链接</h2>
