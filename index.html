@@ -128,12 +128,111 @@
         .skill-card li:last-child {
             border-bottom: none;
         }
+
+        /* ===== 项目展示墙 - CSS Grid 布局 ===== */
+        .projects-section {
+            margin: 60px 0;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .projects-section h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .projects-section > p {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+        }
+
+        /* === CSS Grid 核心代码 === */
+        .projects-grid {
+            display: grid; /* 1. 声明使用Grid布局 */
+            grid-template-columns: repeat(3, 1fr); /* 2. 定义3列，每列等宽 */
+            gap: 30px; /* 3. 网格间隙 */
+        }
+
+        /* 项目卡片基础样式 */
+        .project-card {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 25px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            min-height: 200px;
+        }
+
+        .project-card:hover {
+            border-color: #3498db;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(52, 152, 219, 0.1);
+        }
+
+        .project-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: rgba(52, 152, 219, 0.15);
+        }
+
+        .project-card h3 {
+            color: #2c3e50;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        /* “即将到来”卡片样式 */
+        .project-card.coming-soon {
+            background: linear-gradient(135deg, #f5f7fa, #e4edf5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #7f8c8d;
+            border: 2px dashed #cbd5e1;
+        }
+
+        .coming-soon h3 {
+            color: #94a3b8;
+        }
+
+        /* 当屏幕宽度小于768px（平板/手机）时 */
+        @media (max-width: 768px) {
+        .projects-grid {
+            grid-template-columns: 1fr; /* 变为单列 */
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>✨ one-yi-first 的探索之旅</h1>
-        <h2>今天是2026-01-31，正在学习前端开发  </h2>
+        <h2>今天是2026-02-01，正在学习前端开发  </h2>
         <p class="tagline">从第一个仓库开始，构建数字世界</p>
     </header>
 
@@ -200,6 +299,57 @@
                         <li>Markdown语言学习</li>
                     </ul>
                 </div>
+            </div>
+        </section>
+
+        <section class="projects-section">
+            <h2>🧩 我的项目展示墙</h2>
+            <p>这里会展示我的学习项目和想法。</p>
+    
+            <div class="projects-grid">
+                <!-- 项目1 -->
+                <div class="project-card">
+                    <div class="project-number">01</div>
+                    <h3>第一个网站</h3>
+                    <p>就是你现在看到的这个站点！从零到一的完整搭建记录。</p>
+                    <span class="project-tag">HTML/CSS</span>
+                    <span class="project-tag">Git</span>
+                </div>
+        
+                <!-- 项目2 -->
+                <div class="project-card">
+                    <div class="project-number">02</div>
+                    <h3>编程游戏合集</h3>
+                    <p>记录我通关的各类编程游戏，以及学到的编程思维。</p>
+                    <span class="project-tag">游戏化学习</span>
+                    <span class="project-tag">逻辑</span>
+                </div>
+        
+                <!-- 项目3：请你自己填写！ -->
+                <div class="project-card">
+                    <div class="project-number">03</div>
+                    <h3>待启动的项目</h3>
+                    <p>这里描述你的下一个想法...</p>
+                    <span class="project-tag">构思中</span>
+                </div>
+
+                <!-- 项目4到6：可以复制上面的结构，或留空未来填充 -->
+                <div class="project-card coming-soon">
+                    <h3>更多项目</h3>
+                    <p>🚧 正在筹备中...</p>
+                </div>
+                <!-- 再复制2个 .coming-soon 卡片，让网格凑齐6个 -->
+
+                <div class="project-card coming-soon">
+                    <h3>更多项目</h3>
+                    <p>🚧 正在筹备中...</p>
+                </div>
+
+                <div class="project-card coming-soon">
+                    <h3>更多项目</h3>
+                    <p>🚧 正在筹备中...</p>
+                </div>
+
             </div>
         </section>
 
